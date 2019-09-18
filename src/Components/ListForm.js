@@ -10,7 +10,7 @@ const ListForm = props => {
     setlist({ ...list, [event.target.name]: event.target.value });
   };
   const submitList = event => {
-    event.preventDefalut();
+    event.preventDefault();
     props.addNewList(list);
     setlist({ name: "", email: "", role: "" });
   };
