@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+  width: 100%;
+}
 .App {
   text-align: center;
 }
@@ -44,6 +48,7 @@
   border-radius: 10%;
   margin: 3%;
 }
+
 form {
   width: 100%;
   display: flex;
@@ -53,6 +58,7 @@ form {
   text-align: center;
   background: #cccccc;
 }
+
 button {
   width: 20%;
   align-self: center;
