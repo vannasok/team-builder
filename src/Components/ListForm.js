@@ -1,25 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Lists = props => {
+const ListForm = props => {
+  const [list, setlist] = useState({
+    name: "",
+    email: "",
+    role: ""
+  });
+  const handleChange = event => {
+    setlist({ ...list, [event.target.name]: event.target.value });
+  };
+  const submitList = event => {
+    event.preventDefalut();
+    props.addNewList(list);
+    setlist({ name: "", email: "", role: "" });
+  };
+
   return (
-    <>
-      {props.lists.map(list => {
-        <div className="list" key={list.id}>
-          <h3>Team Member:</h3>
-          <p>
-            <strong>Name: </strong> {list.name}
-          </p>
-          <p>
-            <b>Email: </b>
-            {list.email}
-          </p>
-          <p>
-            <b>Position: </b>
-            {list.position}
-          </p>
-        </div>;
-      })}
-    </>
-  ); //return
-};
-export default Lists;
+    <form onSubmit={submitList}>
+      <label htmlFor="name">
+        Name:
+        <input
+          id="id"
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={list.name}
+          placeholder="Enter Name"
+        ></input>
+      </label>
+
+      <label htmlFor="email">
+        Email:
+        <input
+          id="id"
+          type="text"
+          name="email"
+          onChange={handleChange}
+          value={list.email}
+          placeholder="Enter Email"
+        ></input>
+      </label>
+
+      <label htmlFor="role">
+        Role:
+        <input
+          id="id"
+          type="text"
+          name="role"
+          onChange={handleChange}
+          value={list.role}
+          placeholder="Enter Job Role"
+        ></input>
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+  ); //close return list form
+}; // close list form
+export default ListForm;
