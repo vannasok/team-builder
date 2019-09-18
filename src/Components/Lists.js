@@ -7,7 +7,14 @@ const Lists = props => {
         {props.lists.map(list => (
           <div className="list" key={list.id}>
             <div>
-              <button className="editButton">Delete</button>
+              <button
+                className="editButton"
+                onClick={() => {
+                  props.handleEdit(list);
+                }}
+              >
+                Edit
+              </button>
             </div>
             <h3>Team Member:</h3>
             <p>

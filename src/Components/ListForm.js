@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ListForm = props => {
   const [list, setlist] = useState({
@@ -9,6 +9,12 @@ const ListForm = props => {
   const handleChange = event => {
     setlist({ ...list, [event.target.name]: event.target.value });
   };
+  useEffect(() => {
+    if (props.placeHolder !== "") {
+      setlist(props.placeHolder);
+    }
+  }, [props.placeHolder]);
+
   const submitList = event => {
     event.preventDefault();
     props.addNewList(list);

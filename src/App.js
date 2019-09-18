@@ -5,6 +5,7 @@ import Lists from "./Components/Lists";
 import ReactDOM from "react-dom";
 
 function App() {
+  const [placeHolder, setplaceHolder] = useState("");
   const [lists, setlists] = useState([
     {
       id: 1,
@@ -33,11 +34,23 @@ function App() {
     };
     setlists([...lists, newList]);
   };
+
+  const handleEdit = obj => {
+    const newMember = [...lists];
+    newMember.forEach((ele, index) => {
+      if (ele.name === obj.name) {
+        newMember.splice(index, 1);
+      }
+    });
+    setlists(newMember);
+    setplaceHolder(obj);
+  };
+
   return (
     <div className="App">
       <h1>Team Builder</h1>
-      <ListForm addNewList={addNewList} />
-      <Lists lists={lists} />
+      <ListForm addNewList={addNewList} placeHolder={placeHolder} />
+      <Lists lists={lists} handleEdit={handleEdit} />
     </div>
   );
 }
