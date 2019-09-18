@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  width: 100%;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.showcase {
+  display: flex;
+  flex-flow: wrap;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 40%;
+  background: rgb(236, 235, 235);
+  border-radius: 10%;
+  margin: 3%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 2% 2%;
+  padding: 2%;
+  text-align: center;
+  background: #cccccc;
+}
+
+button {
+  width: 20%;
+  align-self: center;
+  padding: 10px 10px;
+  border-radius: 50px;
+}
+button:hover {
+  color: black;
+  background: gray;
+}
+input {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+label {
+  margin-bottom: 5px;
+}
+.editButton {
+  margin: 1.5%;
+  display: flex;
+  float: right;
+  justify-content: center;
+  font-weight: bold;
+}
