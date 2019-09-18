@@ -78,3 +78,10 @@ input {
 label {
   margin-bottom: 5px;
 }
+.editButton {
+  margin: 1.5%;
+  display: flex;
+  float: right;
+  justify-content: center;
+  font-weight: bold;
+}

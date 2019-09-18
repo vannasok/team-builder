@@ -6,6 +6,9 @@ const Lists = props => {
       <div className="showcase">
         {props.lists.map(list => (
           <div className="list" key={list.id}>
+            <div>
+              <button className="editButton">Delete</button>
+            </div>
             <h3>Team Member:</h3>
             <p>
               <strong>Name: </strong> {list.name}
