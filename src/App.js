@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import ListForm from "./Components/ListForm";
 import Lists from "./Components/Lists";
+import ReactDOM from "react-dom";
 
 function App() {
   const [lists, setlists] = useState([
@@ -42,3 +43,6 @@ function App() {
 }
 
 export default App;
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
